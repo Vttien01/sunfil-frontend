@@ -1,0 +1,151 @@
+.container {
+    box-sizing: border-box;
+}
+.app-header {
+    background-color: white; 
+    color: black;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 12px;
+    background-color: #2caff3;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: white;
+    .top-right {
+        height: 20px;
+    }
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; 
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 20px;
+    border: 1px solid #0373f3;
+    border-radius: 24px;
+    padding: 4px 4px 4px 8px;
+    gap: 12px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 24px;
+    outline: none;
+}
+
+.search-bar .search-button {
+    padding: 8px 20px;
+    border: none;
+    background-color: #0373f3;
+    color: black;
+    border-radius: 24px;
+    cursor: pointer;
+    img {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.nav-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-icon {
+    background: none;
+    border: none;
+    color: balck;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    span {
+        font-weight: 600;
+    }
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 16px;
+}
+
+.nav-button-product {
+    background: #0155c6;
+    border: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-button.highlight {
+    background-color: #a100ff;
+    border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+    .app-header {
+        padding: 0 100px;
+    }
+    .header-top {
+        padding: 8px 100px;
+    }
+}

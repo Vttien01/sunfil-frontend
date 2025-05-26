@@ -1,0 +1,12 @@
+.container {
+    background-color: #f4f6f8;
+    padding: 10px;
+    min-height: 400px;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 100px;
+    }
+}
