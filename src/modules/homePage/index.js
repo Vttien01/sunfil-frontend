@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import bannerImg from "src/assets/images/banner.png";
 import filterImg from "src/assets/images/filter.png";
-import ArrowUp from "src/assets/images/ArrowUp.png";
+import loadingGif from "src/assets/images/loading.gif";
 import groupImg from "src/assets/images/group1.png";
 import { dataProduct } from "./data";
 import Flex from "src/components/elements/Flex";
@@ -14,42 +14,11 @@ import Scroll from "src/components/elements/Scroll";
 import arrowRight from "src/assets/images/arowrightbtn1.png";
 import left from "src/assets/images/Left.png";
 import Filter from "./Filter";
+import ListProduct from "./ListProduct";
 
 const HomePage = () => {
-  const [visibleItems, setVisibleItems] = useState(12);
-  const [isLoading, setIsLoading] = useState(false); // Trạng thái loading
-  const listRef = useRef(null); // Tham chiếu đến container
-
-  // Hàm tải thêm item
-  const loadMoreItems = () => {
-    if (isLoading || visibleItems >= dataProduct.length) return;
-
-    setIsLoading(true);
-    setTimeout(() => {
-      setVisibleItems((prev) => Math.min(prev + 4, dataProduct.length)); // Tải thêm 4 item
-      setIsLoading(false);
-    }, 1000); // Giả lập thời gian tải 1 giây
-  };
-
-  // Phát hiện khi cuộn đến cuối trang
-  useEffect(() => {
-    const handleScroll = () => {
-      if (listRef.current) {
-        const { scrollTop, scrollHeight, clientHeight } = listRef.current;
-        console.log(listRef);
-        if (scrollHeight - scrollTop - clientHeight < 100 && !isLoading) {
-          loadMoreItems();
-        }
-      }
-    };
-
-    const currentRef = listRef.current;
-    currentRef.addEventListener("scroll", handleScroll);
-
-    return () => currentRef.removeEventListener("scroll", handleScroll);
-  }, [isLoading]);
   return (
-    <div className={styles.container} ref={listRef}>
+    <div className={styles.container}>
       <div className={styles.breadcrums}>
         <span>Trang chủ</span>
         <img src={arrowRight} alt="" />
@@ -86,49 +55,7 @@ const HomePage = () => {
       </div>
       <div className={styles.content}>
         <Filter />
-        <div className={styles.listProduct}>
-          <div className={styles.headerProduct}>
-            <span className={styles.title}>Danh sách sản phẩm</span>
-            <span className={styles.filterText}>Sắp xếp theo</span>
-            <div className={classNames(styles.box, styles.hightlight)}>
-              Liên quan
-            </div>
-            <div className={styles.box}>Bán chạy</div>
-            <div className={styles.box}>Mới nhất</div>
-            <div className={styles.box}>Nổi bật</div>
-            <div className={styles.select}>
-              Giá thấp - cao
-              <img src={groupImg} alt="" style={{ width: 16, marginLeft: 4 }} />
-            </div>
-          </div>
-          <div className={styles.listItem}>
-            {dataProduct.map((item) => {
-              return (
-                <div className={styles.item}>
-                  <img src={item.image} alt="" />
-                  <span className={styles.shocking}>
-                    <img src={left} alt="" />
-                    Giá cực sốc
-                  </span>
-                  <span className={styles.name}>{item.name}</span>
-                  <span className={styles.price}>
-                    {formatCurrency(item.price)}
-                  </span>
-                  <Flex gap={"8px"}>
-                    <span className={styles.salePrice}>
-                      {formatCurrency(
-                        item.price - (item.price * item.saleOff) / 100,
-                      )}
-                    </span>
-                    <span className={styles.percent}>-{item.saleOff}%</span>
-                  </Flex>
-                  <button>Mua ngay</button>
-                </div>
-              );
-            })}
-            {/* {isLoading && <p className={styles.loading}>Đang tải...</p>} */}
-          </div>
-        </div>
+        <ListProduct />
       </div>
     </div>
   );
