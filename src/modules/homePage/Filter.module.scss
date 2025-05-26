@@ -1,0 +1,44 @@
+.filter {
+      height: max-content;
+      width: max-content;
+      background-color: white;
+      .element {
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border-bottom: 1px solid #e9ecee;
+        font-size: 20px;
+        font-weight: 600;
+        color: #025fca;
+        img {
+          width: 20px;
+        }
+      }
+      .category {
+        padding: 8px 12px 8px 8px;
+        display: flex;
+        align-items: start;
+        gap: 4px;
+        border-bottom: 1px solid #e9ecee;
+        font-size: 16px;
+        font-weight: 600;
+        flex-direction: column;
+        img {
+          width: 20px;
+        }
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+        .price {
+          border-radius: 8px;
+          border: 1px solid #e5e8eb;
+          padding: 4px;
+          width: 96%;
+          opacity: 0.7;
+        }
+      }
+    }

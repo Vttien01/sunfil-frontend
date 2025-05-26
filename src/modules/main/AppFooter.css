@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #ddd;
-    background-image: url('src/assets/images/footer.jpg');;
+    background-image: url('src/assets/images/footer.jpg');
     font-family: Arial, sans-serif;
 }
 
