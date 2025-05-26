@@ -36,6 +36,7 @@ const HomePage = () => {
     const handleScroll = () => {
       if (listRef.current) {
         const { scrollTop, scrollHeight, clientHeight } = listRef.current;
+        console.log(listRef);
         if (scrollHeight - scrollTop - clientHeight < 100 && !isLoading) {
           loadMoreItems();
         }
@@ -101,7 +102,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className={styles.listItem}>
-            {dataProduct.slice(0, visibleItems).map((item) => {
+            {dataProduct.map((item) => {
               return (
                 <div className={styles.item}>
                   <img src={item.image} alt="" />
@@ -125,7 +126,7 @@ const HomePage = () => {
                 </div>
               );
             })}
-            {isLoading && <p className={styles.loading}>Đang tải...</p>}
+            {/* {isLoading && <p className={styles.loading}>Đang tải...</p>} */}
           </div>
         </div>
       </div>
