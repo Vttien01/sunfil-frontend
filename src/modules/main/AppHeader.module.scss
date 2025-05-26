@@ -64,6 +64,25 @@
           align-items: center;
         }
       }
+      .headerItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #1c252e;
+        span {
+          font-size: 24px;
+          font-weight: 600;
+        }
+        div {
+          font-size: 16px;
+          font-weight: 600;
+          color: #0373F3;
+        }
+        img {
+          margin-bottom: -2px;
+          margin-left: 4px;
+        }
+      }
       .listItem {
         display: flex;
         justify-content: flex-start;

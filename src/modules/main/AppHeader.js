@@ -16,6 +16,7 @@ import subtractImg from "src/assets/images/Subtract.png";
 import supportImg from "src/assets/images/support.png";
 import truckImg from "src/assets/images/truck.png";
 import userImg from "src/assets/images/user.png";
+import strokeImg from "src/assets/images/stroke.png";
 import Flex from "src/components/elements/Flex";
 import { dataProduct } from "src/modules/homePage/data";
 import { formatCurrency } from "src/utils";
@@ -32,7 +33,7 @@ const AppHeader = () => {
   };
 
   const handleMouseLeave = () => {
-    setHoverItem(false); // Tùy chọn, đặt lại khi rời khỏi button
+    setHoverItem(false);
   };
   const handleSelectCategory = (categoryId) => {
     const data = dataProduct.filter((item) => item.categoryId == categoryId);
@@ -130,6 +131,13 @@ const AppHeader = () => {
                         {item.name}
                       </div>
                     ))}
+                  </div>
+                  <div className={styles.headerItem}>
+                    <span>Sản phẩm bán chạy</span>
+                    <div>
+                      Sản phẩm bán chạy
+                      <img src={strokeImg} alt="" />
+                    </div>
                   </div>
                   <div className={styles.listItem}>
                     {data.map((item) => (

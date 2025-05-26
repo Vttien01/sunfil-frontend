@@ -1,19 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
-import styles from "./index.module.scss";
-import bannerImg from "src/assets/images/banner.png";
-import filterImg from "src/assets/images/filter.png";
-import loadingGif from "src/assets/images/loading.gif";
-import groupImg from "src/assets/images/group1.png";
-import { dataProduct } from "./data";
-import Flex from "src/components/elements/Flex";
-import Checkbox from "src/components/elements/Checkbox";
-import { formatCurrency } from "src/utils";
-import classNames from "classnames";
-import Scroll from "src/components/elements/Scroll";
 import arrowRight from "src/assets/images/arowrightbtn1.png";
+import bannerImg from "src/assets/images/banner.png";
 import left from "src/assets/images/Left.png";
+import Flex from "src/components/elements/Flex";
+import Scroll from "src/components/elements/Scroll";
+import { formatCurrency } from "src/utils";
+import { dataProduct } from "./data";
 import Filter from "./Filter";
+import styles from "./index.module.scss";
 import ListProduct from "./ListProduct";
 
 const HomePage = () => {
